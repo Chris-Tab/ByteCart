@@ -59,6 +59,15 @@ This app demonstrates core backend development skills using Django, with an emph
 
 ---
 
+### 🧾 Chapter 5 – Bootstrap Layouts
+- Added `container`, `row`, and `col` classes to organize page structure
+- Styled product list using Bootstrap grid and card components
+- Made product cards responsive across screen sizes
+- Improved spacing and layout using `mx-auto`, `text-center`, and `py-` utilities
+- Ensured consistent and mobile-friendly UI using Bootstrap 4 conventions
+
+---
+
 ## 🧰 Technologies Used
 - **Python 3.10**
 - **Django 5.2**
@@ -70,13 +79,10 @@ This app demonstrates core backend development skills using Django, with an emph
 
 ## 🗂 Folder Structure (Key Parts)
 
-
-Folder Structure:
-
 ByteCart/
 ├── bytecart/ # Core Django project
 │ ├── views.py # Home, about, contact, register, login
-│ └── urls.py # Main URL routing
+│ ├── urls.py # Main URL routing
 │ └── templates/ # Base and shared templates
 │ ├── base/ # Navbar, base.html
 │ └── home_page.html # Main homepage
