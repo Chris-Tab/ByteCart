@@ -25,7 +25,7 @@ def contact_page(request):
     context = {
         "title": "Contact Page",
         "content": "Feel free to reach out to us through the contact page.",
-        "form": contact_form,
+        "form": contact_form,     
     }
     if contact_form.is_valid():
         print(contact_form.cleaned_data)        
@@ -58,7 +58,9 @@ def login_page(request):
             print("Invalid credentials") 
 
     return render(request, "auth/login.html", context )
+
 User = get_user_model()
+
 def register_page(request):
     form = RegisterForm(request.POST or None)
     context = {

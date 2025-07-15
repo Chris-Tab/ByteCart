@@ -2,60 +2,95 @@
 
 **ByteCart** is a Django-based e-commerce website developed as the final project for my Django Backend Technologies training course.
 
-It is built with clean code structure, real-world features, and production-ready practices — showcasing a strong grasp of Django’s core concepts including URL routing, templates, authentication, and static file management.
+This app demonstrates core backend development skills using Django, with an emphasis on structured templates, model relationships, custom views, and clean URL routing. Each chapter builds on the previous, simulating a real-world development process.
 
 ---
 
-## 💻 Features Implemented (Chapter 1 Complete ✅)
+## ✅ Chapters Completed
 
-- Django project setup with virtual environment
-- Custom homepage, about, and contact pages using Django views and templates
-- Contact form using Django’s `forms.Form`, with validation and cleaned data
-- User registration with input validation and secure password hashing
-- User login and session-based authentication
-- Template folder configured with settings and dynamic context passed via views
-- Static and media file folders structured and configured:
+### 📘 Chapter 1 – Project & Base Setup
+- Created Django project: `ByteCart`
+- Initialized virtual environment and installed Django 5.2
+- Set up basic views: `home`, `about`, and `contact`
+- Built simple contact form using `forms.Form` with field validation
+- Implemented user registration and login with hashed password storage
+- Configured `base.html` template and inherited structure for all pages
+- Set up static and media directories with:
   - `STATICFILES_DIRS`, `STATIC_ROOT`, `MEDIA_ROOT`
-  - Successfully tested `collectstatic` and file organization
-- Bootstrap-compatible base template (ready for layout structure)
-- Basic error handling and debug troubleshooting
-
-
-## 🧱 Features Implemented (Chapter 2 & 3 Complete ✅)
-
-- Created new Django app: `products`
-- Defined `Product` model with title, description, price, image, featured, and active flags
-- Image upload functionality with random renaming and dynamic storage path
-- Custom model manager with `featured()` and `active()` querysets
-- `SlugField` support for SEO-friendly URLs, auto-generated with a unique slug generator
-- Detail page accessible by slug: `/products/<slug>/`
-- Template updates to safely handle products with or without images
-- Cleaned URL structure using `products/urls.py` and included in root via `include()`
-- Product detail URLs generated using Django’s `reverse()` inside `get_absolute_url`
-- Static image fallback for missing product images
-
+  - `collectstatic` tested and working
+- Added Bootstrap to templates for responsive UI
 
 ---
 
-## 🚀 Technologies Used
+### 📗 Chapter 2 – Product App Creation
+- Created new Django app: `products`
+- Designed `Product` model:
+  - Fields: title, slug, description, price, image, featured, active
+- Implemented random image upload path with `upload_to` and renaming logic
+- Registered `Product` model in admin
+- Created custom model manager:
+  - `Product.objects.featured()` returns featured items
+  - `Product.objects.all()` returns active items
 
+---
+
+### 📕 Chapter 3 – Slugs & URL Routing
+- Added unique slugs for products using `SlugField` and `get_absolute_url`
+- Connected detail page with slug route: `/products/<slug>/`
+- Created product detail view using `DetailView`
+- Added fallback `get_object()` with custom error handling for:
+  - Missing products
+  - Duplicate slugs
+- Included `products.urls` in main `urls.py` using `include()`
+- Template now uses `reverse()` and `{% url %}` for link generation
+
+---
+
+### 📙 Chapter 4 – Template Design & Refactoring
+- Introduced `{% block content %}` and `{% include %}` system for layout control
+- Moved product card into `products/snippets/card.html` for reuse
+- Enhanced navbar styling:
+  - Dynamically highlights current active page
+  - Included links to Home, Contact, Products, Login, Register, Logout
+- Fixed image display bugs with conditional `{% if instance.image %}`
+- Slug-based navigation tested from product list to detail page
+- Button and image links now route to the correct detail page
+- Improved error messaging and template fallback for missing images or slugs
+
+---
+
+## 🧰 Technologies Used
 - **Python 3.10**
 - **Django 5.2**
-- HTML5 / CSS3 (with support for Bootstrap)
-- SQLite (default development database)
+- SQLite (default)
+- Bootstrap 4 (CDN)
+- Custom static files & media file management
 
 ---
 
-## 📁 Folder Structure (Key Elements)
+## 🗂 Folder Structure (Key Parts)
 
-```plaintext
+
+Folder Structure:
+
 ByteCart/
-├── bytecart/               # Django project core
-│   ├── views.py            # Main views: home, about, contact, login, register
-│   ├── urls.py             # Route handling
-│   └── templates/          # HTML templates (organized by section)
-├── static_my_project/      # Custom static files (CSS, JS, images)
-├── static_cdn/             # Collectstatic destination
-│   ├── static_root/
-│   └── media_root/
+├── bytecart/ # Core Django project
+│ ├── views.py # Home, about, contact, register, login
+│ └── urls.py # Main URL routing
+│ └── templates/ # Base and shared templates
+│ ├── base/ # Navbar, base.html
+│ └── home_page.html # Main homepage
+├── products/ # Product app
+│ ├── models.py
+│ ├── views.py
+│ ├── urls.py
+│ └── templates/products/
+│ ├── list.html
+│ ├── detail.html
+│ └── snippets/card.html
+├── static_my_project/ # Local static files (CSS, JS, images)
+├── static_cdn/ # Static and media collected here
+│ ├── static_root/
+│ └── media_root/
+├── db.sqlite3 # Dev database
 ├── manage.py
