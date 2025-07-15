@@ -20,6 +20,21 @@ It is built with clean code structure, real-world features, and production-ready
 - Bootstrap-compatible base template (ready for layout structure)
 - Basic error handling and debug troubleshooting
 
+
+## 🧱 Features Implemented (Chapter 2 & 3 Complete ✅)
+
+- Created new Django app: `products`
+- Defined `Product` model with title, description, price, image, featured, and active flags
+- Image upload functionality with random renaming and dynamic storage path
+- Custom model manager with `featured()` and `active()` querysets
+- `SlugField` support for SEO-friendly URLs, auto-generated with a unique slug generator
+- Detail page accessible by slug: `/products/<slug>/`
+- Template updates to safely handle products with or without images
+- Cleaned URL structure using `products/urls.py` and included in root via `include()`
+- Product detail URLs generated using Django’s `reverse()` inside `get_absolute_url`
+- Static image fallback for missing product images
+
+
 ---
 
 ## 🚀 Technologies Used
