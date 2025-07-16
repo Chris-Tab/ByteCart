@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Custom apps
+    'accounts',
+    'addresses',
+    'billing',
     'carts',
+    'orders',
     'products',
     'search',
     'tags',
@@ -134,6 +138,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static_cdn', 'media_root')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGOUT_REDIRECT_URL = '/login/'
 
 
 print("STATICFILES_DIRS:", STATICFILES_DIRS)

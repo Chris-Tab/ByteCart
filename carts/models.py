@@ -2,7 +2,10 @@ from django.conf import settings
 from decimal import Decimal
 from django.db import models
 from django.db.models.signals import pre_save, m2m_changed
+
 from products.models import Product
+
+
 
 User = settings.AUTH_USER_MODEL
 
@@ -62,3 +65,9 @@ def pre_save_cart_receiver(sender, instance, *args, **kwargs):
         instance.total = Decimal('0.00')
 
 pre_save.connect(pre_save_cart_receiver, sender=Cart)
+
+
+def update_totals(self):
+    self.subtotal = sum([p.price for p in self.products.all()])
+    self.total = self.subtotal * Decimal('1.08') if self.subtotal > 0 else Decimal('0.00')
+    self.save()
