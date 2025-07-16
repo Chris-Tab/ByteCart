@@ -25,7 +25,7 @@ urlpatterns = [
     path('checkout/', checkout_home, name='checkout'),
     path('register/guest/', guest_register_view, name='guest_register'),
     path('logout/', LogoutView.as_view(), name='logout'),
-    path('carts/', include("carts.urls"), name='cart'),
+    path('cart/', include("carts.urls")),
     path('register/', register_page, name='register'),
     path('bootstrap/', TemplateView.as_view(template_name='bootstrap/example.html')),
     path('products/', include('products.urls', namespace='products')),

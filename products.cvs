@@ -1,0 +1,35 @@
+title,description,price,slug,is_featured
+Python Crash Course, 3rd Edition,"Hands-on, project-based introduction to Python—great for beginners and practical learners.",29.99,python-crash-course-3e,True
+Cracking the Coding Interview,"Comprehensive prep for technical interviews with 189 programming questions and solutions.",39.99,cracking-coding-interview,True
+Clean Code: A Handbook of Agile Software Craftsmanship,"Timeless guide to writing clean, maintainable, and professional-grade code.",34.99,clean-code,True
+The Pragmatic Programmer,"Tips, analogies, and practical advice for software developers aiming for mastery.",39.99,the-pragmatic-programmer,True
+The Mythical Man-Month,"Classic essays on project management and software engineering challenges.",24.99,mythical-man-month,False
+Introduction to Algorithms (CLRS),"Definitive university textbook on algorithms, used worldwide.",89.99,introduction-to-algorithms,False
+The Art of Computer Programming,"Donald Knuth’s multi-volume series—an essential but deep dive into algorithms.",199.99,art-of-computer-programming,False
+Command Line Kung Fu,"Practical tricks and tips to master Bash scripting and Linux command line.",24.99,command-line-kung-fu,False
+Shell Scripting: How to Automate Command Line Tasks,"Beginner-friendly guide to automating workflows in Bash and shells.",19.99,shell-scripting-automation,False
+Empire of AI,"Critical account of OpenAI’s rise, culture, and Sam Altman’s leadership in AI development.",22.00,empire-of-ai,True
+Inspired,"Frameworks and best practices for creating tech products customers love.",29.99,inspired-svp,False
+Digital Transformation: Survive and Thrive in an Era of Mass Extinction,"Strategic guide to digital transformation across industries.",27.99,digital-transformation-guide,False
+The Cold Start Problem,"How to start and scale products using network effects, with case studies.",26.99,cold-start-problem,False
+The Technological Republic,"Exploration of Silicon Valley’s geopolitical influence and state-tech relations.",24.99,technological-republic,False
+Algospeak: How Social Media Is Transforming the Future of Language,"Examines internet slang and algorithm-driven language evolution.",20.00,algospeak,False
+Source Code: My Beginnings,"Bill Gates’s memoir focusing on his early years and Microsoft’s founding era.",25.99,source-code-gates,False
+Quantum Supremacy,"Popular science overview of quantum computing and its future impact.",22.00,quantum-supremacy,False
+Bad Blood: Secrets and Lies in a Silicon Valley Startup,"Thrilling investigative account of Theranos’s rise and fall.",18.99,bad-blood-theranos,False
+The Soul of a New Machine,"Behind‑the‑scenes story of a computer engineering team racing innovation.",19.99,soul-of-a-new-machine,False
+Superbloom: How Technologies of Connection Tear Us Apart,"Critique of digital connection’s social fragmentation and tech hype.",21.99,superbloom,False
+The Optimist: Sam Altman, OpenAI, and the Race to Invent the Future,"More balanced biography of OpenAI’s co-founder and organizational journey.",22.99,optimist-altman,False
+World Builders: Technology and the New Geopolitics,"Insightful look at tech's role in geopolitics and global power shifts.",24.99,world-builders-geopolitics,False
+Careless People: A Story of Where I Used to Work,"Ex‑Facebook insider memoir uncovering Silicon Valley culture.",18.99,careless-people-facebook,False
+The Forgotten Sense,"Explores the science of smell and its overlooked importance.",16.99,forgotten-sense,False
+Proof: The Uncertain Science of Certainty,"Examines scientific uncertainty and public communication of evidence.",18.99,proof-certainty,False
+Our Brains, Our Selves,"Neurologist’s memoir drawing lessons from patient stories about the brain.",17.99,our-brains-our-selves,False
+Blueprints: How Mathematics Shapes Creativity,"Shows the link between math and creative arts across disciplines.",18.99,blueprints-math-creativity,False
+Range,"Explores how generalists succeed in a complex, specialized world.",21.99,range-david-epstein,False
+Zero to One,"Peter Thiel’s vision on building innovative, future-changing startups.",19.99,zero-to-one-thiel,False
+Atomic Habits,"James Clear’s system for building good habits and breaking bad ones.",16.99,atomic-habits,False
+Steve Jobs,"Walter Isaacson’s comprehensive biography on Apple’s co-founder.",18.99,steve-jobs-bio,False
+The Design of Everyday Things,"Don Norman’s classic on user-centered design and psychological usability.",19.99,design-everyday-things,False
+Sapiens,"Yuval Noah Harari’s sweeping history of humankind and technology.",22.99,sapiens-harari,False
+Tools of Titans,"Life and business lessons from successful entrepreneurs curated by Tim Ferriss.",21.99,tools-of-titans,False

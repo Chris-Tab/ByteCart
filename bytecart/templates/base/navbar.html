@@ -5,23 +5,28 @@
 {% url 'login' as login_url %}
 {% url 'logout' as logout_url %}
 {% url 'register' as register_url %}
-{% url 'carts:home' as cart_url %}
+{% url 'cart:home' as cart_url %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #13778a;">
   <div class="container">
-    <a class="navbar-brand" href="{{ home_url }}">
-      <img src="{% static 'img/ByteCart_Logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="ByteCart Logo">
+
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ home_url }}">
+      <img src="{% static 'img/ByteCart_Logo.png' %}" style="max-height: 36px; width: auto;" class="me-2" alt="ByteCart Logo">
+
+      
       {% if brand_name %} {{ brand_name }} {% else %} ByteCart {% endif %}
     </a>
 
-
+    <!-- Mobile toggle -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Navigation links -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
           <a class="nav-link {% if request.path == home_url %}fw-bold active{% endif %}" href="{{ home_url }}">Home</a>
@@ -39,37 +44,32 @@
         <li class="nav-item">
           <form method="POST" action="{{ logout_url }}">
             {% csrf_token %}
-            <button class="nav-link btn btn-link text-white" style="text-decoration: none;" type="submit">
+            <button class="nav-link btn btn-link text-white px-0" style="text-decoration: none;" type="submit">
               Logout
             </button>
           </form>
         </li>
         {% else %}
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == register_url %}fw-bold active{% endif %}" href="{{ register_url }}">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if request.path == login_url %}fw-bold active{% endif %}" href="{{ login_url }}">Login</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == register_url %}fw-bold active{% endif %}" href="{{ register_url }}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == login_url %}fw-bold active{% endif %}" href="{{ login_url }}">Login</a>
+        </li>
         {% endif %}
-            <li class="nav-item">
-            <a class="nav-link {% if request.path == login_url %}fw-bold active{% endif %}" href="{{ cart_url }}">{{ request.session.cart_items }} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-</svg></a>
-          </li>
 
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
+        <!-- Cart link -->
+        <li class="nav-item">
+            <a class="nav-link d-flex align-items-center {% if request.path == cart_url %}fw-bold active{% endif %}" href="{{ cart_url }}">
+              <img src="{% static 'img/icons/cart.png' %}" alt="Cart" width="24" class="me-1">
+              <span class="cart-count">{{ request.session.cart_items|default:0 }}</span>
+            </a>
+        </li>
+
+
       </ul>
 
+      <!-- Search form -->
       {% include "search/snippets/search-form.html" %}
     </div>
   </div>

@@ -30,7 +30,7 @@
       <p class="lead">Shipping Address:</p>
       <hr/>
       {% url "checkout_address_create" as checkout_address_create %}
-      {% include "addresses/form.html" with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type="shiping" %}
+      {% include "addresses/form.html" with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type="shipping" %}
     </div>
   </div>
   {% elif not object.billing_address %}
@@ -39,7 +39,7 @@
       <p class="lead">Billing Address:</p>
       <hr/>
       {% url "checkout_address_create" as checkout_address_create %}
-      {% include "addresses/form.html" with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type="shipping" %}
+      {% include "addresses/form.html" with form=address_form next_url=request.build_absolute_uri action_url=checkout_address_create address_type="billing" %}
     </div>
   </div>
    

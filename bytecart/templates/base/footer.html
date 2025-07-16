@@ -1,0 +1,33 @@
+{% load static %}
+
+<footer class="footer py-4 mt-auto" style="background: linear-gradient(90deg, #16879e, #3e4692); color: white;">
+  <div class="container text-center">
+    <p class="mb-3">&copy; 2025 ByteCart. All rights reserved.</p>
+    
+    <!-- Footer links -->
+    <div class="d-flex justify-content-center flex-wrap gap-4 mb-3" style="gap: 30px;">
+      <a href="{% url 'home' %}" class="text-white text-decoration-none">Home</a>
+      <a href="{% url 'products:list' %}" class="text-white text-decoration-none">Products</a>
+      <a href="{% url 'contact' %}" class="text-white text-decoration-none">Contact</a>
+      <a href="{% url 'privacy' %}" class="text-white text-decoration-none">Privacy</a>
+      <a href="{% url 'terms' %}" class="text-white text-decoration-none">Terms</a>
+    </div>
+
+    <!-- Social icons -->    
+<div class="d-flex justify-content-center mb-2" style="gap: 30px;">
+  <a href="https://youtube.com" target="_blank">
+    <img src="{% static 'img/icons/youtube.png' %}" alt="YouTube" width="32">
+  </a>
+  <a href="https://instagram.com" target="_blank">
+    <img src="{% static 'img/icons/instagram.png' %}" alt="Instagram" width="32">
+  </a>
+  <a href="https://tiktok.com" target="_blank">
+    <img src="{% static 'img/icons/tiktok.png' %}" alt="TikTok" width="32">
+  </a>
+  <a href="https://x.com" target="_blank">
+    <img src="{% static 'img/icons/x.png' %}" alt="X / Twitter" width="32">
+  </a>
+</div>
+
+  </div>
+</footer>

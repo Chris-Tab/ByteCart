@@ -6,6 +6,7 @@ from .models import Cart
 from billing.models import BillingProfile
 from accounts.models import GuestEmail
 from addresses.forms import AddressForm
+from django.http import JsonResponse
 
 
 
@@ -20,17 +21,30 @@ def cart_update(request):
         try:
             product_obj = Product.objects.get(id=product_id)
         except Product.DoesNotExist:
-            print("Product not found!")
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+                return JsonResponse({"error": "Product not found."}, status=404)
             return redirect("carts:home")
+
         cart_obj, new_obj = Cart.objects.new_or_get(request)
+
+        added = False
         if product_obj in cart_obj.products.all():
             cart_obj.products.remove(product_obj)
         else:
             cart_obj.products.add(product_obj)
+            added = True
 
-        request.session["cart_items"] = cart_obj.products.count()
-    else:
-        print("No product_id provided in POST data.")
+        cart_count = cart_obj.products.count()
+        request.session["cart_items"] = cart_count
+
+        # ✅ AJAX RESPONSE
+        if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({
+                "added": added,
+                "cartItemCount": cart_count
+            })
+
+    # Fallback for non-AJAX
     return redirect("carts:home")
 
 
