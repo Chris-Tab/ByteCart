@@ -1,0 +1,60 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block base_head %}
+<style>
+  .terms-page p {
+    color: #262626;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+  .terms-page h4 {
+    margin-top: 2.5rem;
+    color: #13778a;
+    font-weight: 600;
+  }
+  .terms-page a {
+    color: #13778a;
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="terms-page container my-5">
+  <h1 class="mb-4 text-center fw-bold">Terms & Conditions</h1>
+
+  <p>
+    By using the ByteCart website, you agree to the following terms and conditions. Please read them carefully before placing any order or using our services.
+  </p>
+
+  <h4>1. Use of Website</h4>
+  <p>You agree to use this website only for lawful purposes. Any attempt to interfere with or disrupt the operation of the website, or misuse of its content, is strictly prohibited.</p>
+
+  <h4>2. Account Registration</h4>
+  <p>When you create an account with us, you are responsible for maintaining the confidentiality of your login details. You agree to provide accurate and current information during registration.</p>
+
+  <h4>3. Orders & Payments</h4>
+  <p>All orders placed through ByteCart are subject to availability and confirmation. We reserve the right to refuse or cancel any order. Payments must be completed before products are delivered.</p>
+
+  <h4>4. Pricing & Product Information</h4>
+  <p>We strive to keep all pricing and product details accurate, but errors may occasionally occur. We reserve the right to update information and correct pricing mistakes without notice.</p>
+
+  <h4>5. Intellectual Property</h4>
+  <p>All content on this site — including text, images, logos, and product listings — is the property of ByteCart or its content suppliers and is protected by intellectual property laws.</p>
+
+  <h4>6. Limitation of Liability</h4>
+  <p>ByteCart will not be held liable for any indirect, incidental, or consequential damages arising from the use or inability to use our services, even if we were advised of the possibility.</p>
+
+  <h4>7. Links to Third Parties</h4>
+  <p>Our site may contain links to other websites. We are not responsible for the content or privacy practices of those external sites.</p>
+
+  <h4>8. Termination</h4>
+  <p>We may suspend or terminate your access to our services at any time if we reasonably believe you have violated these terms.</p>
+
+  <h4>9. Changes to These Terms</h4>
+  <p>We may revise these terms from time to time. Continued use of the site after updates constitutes acceptance of the new terms. Last updated on <strong>16 July 2025</strong>.</p>
+
+  <p class="mt-4">For any questions about these terms, please <a href="{% url 'contact' %}">contact us</a>.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ByteCart</title>
+
+  <!-- Include Bootstrap CSS -->
+  {% include 'base/css.html' %}
+  {% block base_head %}{% endblock %}
+</head>
+
+<body>
+  <!-- Navbar -->
+  {% include 'base/navbar.html' with brand_name='ByteCart' %}
+
+  <!-- Main Page Content -->
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer class="footer text-white text-center py-4 mt-5" style="background: linear-gradient(90deg, #b5469e, #6c47b9);">
+  <div class="container">
+
+    <!-- Navigation Links -->
+    <div class="mb-3 d-flex flex-wrap justify-content-center small" style="gap: 1.5rem;">
+      <a href="{% url 'home' %}" class="text-white text-decoration-none">Home</a>
+      <a href="{% url 'products:list' %}" class="text-white text-decoration-none">Products</a>
+      <a href="{% url 'contact' %}" class="text-white text-decoration-none">Contact</a>
+      <a href="{% url 'privacy' %}" class="text-white text-decoration-none">Privacy Policy</a>
+      <a href="{% url 'terms' %}" class="text-white text-decoration-none">Terms</a>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="mb-3 d-flex justify-content-center" style="gap: 1.5rem;">
+      <a href="https://www.youtube.com" target="_blank">
+        <img src="{% static 'img/social/youtube.png' %}" alt="YouTube" style="height: 32px;">
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="{% static 'img/social/instagram.png' %}" alt="Instagram" style="height: 32px;">
+      </a>
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="{% static 'img/social/facebook.png' %}" alt="Facebook" style="height: 32px;">
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="{% static 'img/social/x.png' %}" alt="X" style="height: 32px;">
+      </a>
+      <a href="https://www.tiktok.com" target="_blank">
+        <img src="{% static 'img/social/tiktok.png' %}" alt="TikTok" style="height: 32px;">
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="small">&copy; 2025 ByteCart.com</div>
+  </div>
+</footer>
+
+
+  <!-- JS Includes -->
+  {% include 'base/js.html' %}
+
+  <!-- AJAX Form Handler -->
+  <script>
+    $(document).ready(function () {
+      var productForm = $('.form-product-ajax');
+
+      productForm.submit(function (event) {
+        event.preventDefault();
+        console.log("Form not sending");
+
+        var thisForm = $(this);
+        var actionEndpoint = thisForm.attr('action');
+        var method = thisForm.attr('method');
+        var formData = thisForm.serialize();
+
+        console.log(method, actionEndpoint);
+
+        $.ajax({
+          url: actionEndpoint,
+          method: method,
+          data: formData,
+          success: function (data) {
+            console.log("AJAX Success", data);
+          },
+          error: function (errorData) {
+            console.log("Error");
+            console.log(errorData);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

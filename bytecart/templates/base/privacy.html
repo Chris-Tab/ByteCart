@@ -1,0 +1,71 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block base_head %}
+<style>
+  .privacy-page p {
+    color: #262626;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+  .privacy-page h4 {
+    margin-top: 2.5rem;
+    color: #13778a;
+    font-weight: 600;
+  }
+  .privacy-page a {
+    color: #13778a;
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="privacy-page container my-5">
+  <h1 class="mb-4 text-center fw-bold">Privacy Policy</h1>
+  <p>
+    Your privacy is important to us. This Privacy Policy outlines how ByteCart collects, uses, and protects your personal information when using our website and services.
+  </p>
+
+  <h4>1. What Information We Collect</h4>
+  <p>We collect the following types of personal data when you interact with our platform:</p>
+  <ul>
+    <li>Name and email address</li>
+    <li>Billing and shipping address</li>
+    <li>Order history and preferences</li>
+    <li>Contact details when you submit forms or reach out to support</li>
+  </ul>
+
+  <h4>2. How We Use Your Data</h4>
+  <p>Your data is used to:</p>
+  <ul>
+    <li>Process orders and transactions</li>
+    <li>Communicate with you regarding purchases or account activity</li>
+    <li>Improve our services and personalize user experience</li>
+    <li>Ensure website functionality and security</li>
+  </ul>
+
+  <h4>3. Use of Cookies</h4>
+  <p>We use cookies to remember your preferences, analyze site traffic, and enhance functionality. You may disable cookies through your browser settings, but parts of the site may not function properly.</p>
+
+  <h4>4. Sharing Your Information</h4>
+  <p>We never sell your data. We may share information with trusted third-party services (like payment processors or delivery companies) solely to complete your transaction or support your experience.</p>
+
+  <h4>5. Data Security</h4>
+  <p>We take data protection seriously and use technical and organizational measures to safeguard your information. However, no method of transmission over the internet is 100% secure.</p>
+
+  <h4>6. Your Rights</h4>
+  <p>You have the right to request:</p>
+  <ul>
+    <li>Access to your personal data</li>
+    <li>Correction of inaccurate data</li>
+    <li>Deletion of your account and associated data</li>
+  </ul>
+  <p>To exercise these rights, please <a href="{% url 'contact' %}">contact us</a>.</p>
+
+  <h4>7. Policy Updates</h4>
+  <p>This Privacy Policy may be updated to reflect changes in our practices. We recommend checking this page periodically. The last update was on <strong>16 July 2025</strong>.</p>
+
+  <p class="mt-4">For any concerns or questions, please <a href="{% url 'contact' %}">get in touch</a>.</p>
+</div>
+{% endblock %}

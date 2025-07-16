@@ -11,12 +11,15 @@ from carts.views import cart_home, checkout_home
 
 from accounts.views import guest_register_view, login_page, register_page
 from addresses.views import checkout_address_create_view
-from .views import home_page, about_page, contact_page
+from .views import home_page, about_page, contact_page, privacy_policy_page, terms_page
+
 
 urlpatterns = [
     path('', home_page, name='home'),
     path('about/', about_page, name='about'),
     path('contact/', contact_page, name='contact'),
+    path('privacy/', privacy_policy_page, name='privacy'),
+    path('terms/', terms_page, name='terms'),
     path('login/', login_page, name='login'),
     path('checkout/address/create/', checkout_address_create_view, name='checkout_address_create'),
     path('checkout/', checkout_home, name='checkout'),

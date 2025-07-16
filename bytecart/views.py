@@ -11,7 +11,7 @@ def home_page(request):
     }
     if request.user.is_authenticated:
         context["premium_content"] = "YEAH! You are logged in."
-    return render(request, "home_page.html", context)
+    return render(request, "bytecart/home_page.html", context)
 
 def about_page(request):
     context = {
@@ -35,6 +35,14 @@ def contact_page(request):
     #     print(request.POST.get("email"))
     #     print(request.POST.get("content"))
     return render(request, "contact/view.html", context)
+
+
+def privacy_policy_page(request):
+    return render(request, "base/privacy.html", {})
+
+def terms_page(request):
+    return render(request, "base/terms.html", {})
+
 
 
 
